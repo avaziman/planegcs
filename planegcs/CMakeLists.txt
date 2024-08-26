@@ -1,5 +1,5 @@
 # This library provides WebAssembly bindings for the FreeCAD's geometric solver library planegcs.
-# Copyright (C) 2023  Miroslav Šerý, Salusoft89 <miroslav.sery@salusoft89.cz>  
+# Copyright (C) 2023  Miroslav Šerý, Salusoft89 <miroslav.sery@salusoft89.cz>
 
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -48,7 +48,7 @@ endif()
 
 # note: STACK_SIZE fixes memory issue with sketches of > 100 items and (interestingly) temporary constraints
 # maybe there could be some optimization in planegcs?
-set_target_properties(planegcs PROPERTIES LINK_FLAGS "${BUILD_TYPE_FLAGS} -lembind --closure 1 -s EXPORT_ES6=1 -s MODULARIZE=1 -s MALLOC=emmalloc -s NO_FILESYSTEM=1 -s STACK_SIZE=5MB")
+set_target_properties(planegcs PROPERTIES LINK_FLAGS "${BUILD_TYPE_FLAGS} -lembind --closure 1 -s EXPORT_ES6=0 -s MODULARIZE=1 -s MALLOC=emmalloc -s NO_FILESYSTEM=1 -s STACK_SIZE=5MB")
 
 # turn off deprecated warnings coming from Boost
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated")
